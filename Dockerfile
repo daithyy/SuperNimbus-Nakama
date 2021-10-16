@@ -2,10 +2,10 @@ FROM node:alpine AS node-builder
 
 WORKDIR /backend
 
-COPY package*.json .
+COPY package*.json ./
 RUN npm install
 
-COPY tsconfig.json .
+COPY tsconfig.json ./
 COPY /src/*.ts ./src/
 RUN npx tsc
 
