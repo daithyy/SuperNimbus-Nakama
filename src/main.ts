@@ -5,5 +5,6 @@ let InitModule: nkruntime.InitModule = function (
   initializer: nkruntime.Initializer
 ) {
   initializer.registerRpc("healthcheck", RpcHealthCheck);
+  initializer.registerRpc("servervalidate", ServerValidate);
   logger.info("JavaScript module loaded");
 };

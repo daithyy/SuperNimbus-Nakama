@@ -1,4 +1,4 @@
-let RpcHealthCheck = function (
+let RpcHealthCheck: nkruntime.RpcFunction = function (
   ctx: nkruntime.Context,
   logger: nkruntime.Logger,
   nk: nkruntime.Nakama,
