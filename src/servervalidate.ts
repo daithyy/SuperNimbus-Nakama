@@ -31,7 +31,7 @@ let ServerValidate: nkruntime.RpcFunction = function (
   try {
     result = nk.storageRead(objectIds)[0];
   } catch (error) {
-    return error as string;
+    throw Error(<string>error);
   }
 
   return JSON.stringify({ result });
