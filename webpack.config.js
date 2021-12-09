@@ -25,5 +25,6 @@ module.exports = {
 
   //default mode is production
   mode: "development",
+  // The target: 'node' option tells webpack not to touch any built-in modules like fs or path.
   target: "node"
 };
