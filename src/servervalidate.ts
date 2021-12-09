@@ -1,4 +1,4 @@
-let ServerValidate: nkruntime.RpcFunction = function (
+export function ServerValidate(
   ctx: nkruntime.Context,
   logger: nkruntime.Logger,
   nk: nkruntime.Nakama,
@@ -35,4 +35,4 @@ let ServerValidate: nkruntime.RpcFunction = function (
   }
 
   return JSON.stringify({ result });
-};
+}

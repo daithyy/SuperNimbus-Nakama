@@ -1,4 +1,4 @@
-let RpcHealthCheck: nkruntime.RpcFunction = function (
+export function RpcHealthCheck(
   ctx: nkruntime.Context,
   logger: nkruntime.Logger,
   nk: nkruntime.Nakama,
@@ -6,4 +6,4 @@ let RpcHealthCheck: nkruntime.RpcFunction = function (
 ): string {
   logger.info("Healthcheck RPC called");
   return JSON.stringify({ success: true });
-};
+}

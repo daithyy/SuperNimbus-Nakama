@@ -4,15 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^4.4.4"
+    "@babel/preset-typescript": "^7.16.0",
+    "source-map-loader": "^3.0.0",
+    "typescript": "^4.5.2",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
   },
   "dependencies": {
-    "nakama-runtime": "github:heroiclabs/nakama-common"
+    "@types/node": "^16.11.12",
+    "nakama-runtime": "github:heroiclabs/nakama-common",
+    "ts-loader": "^9.2.6"
   }
 }

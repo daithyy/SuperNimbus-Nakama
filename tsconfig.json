@@ -1,18 +1,25 @@
 {
   "files": [
-    "./src/main.ts",
-    "./src/healthcheck.ts",
-    "./src/servervalidate.ts",
+    "./node_modules/nakama-runtime/index.d.ts",
   ],
   "compilerOptions": {
-    "target": "es5",
-    "typeRoots": [
-      "./node_modules"
-    ],
-    "outFile": "./build/index.js",
-    "strict": true,
+    "target": "es6",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": false,
+    "noImplicitReturns": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "noUnusedLocals": true,
+    "removeComments": true,
+  },
+  "include": [
+    "src/**/*",
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
+  "engines": {
+    "node": "10"
   }
 }
