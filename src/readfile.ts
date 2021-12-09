@@ -4,19 +4,19 @@ export function ReadFile(
   ctx: nkruntime.Context,
   logger: nkruntime.Logger,
   nk: nkruntime.Nakama,
-  path: string
+  pathObj: any
 ): string {
-  fs.readFile(path, (err, data) => {
-    if (err) {
-      logger.error(err.message);
+  logger.info("path %q", pathObj);
 
-      throw err;
-    }
+  type MyPath = {
+    path: string;
+  };
 
-    logger.info(data.toString());
+  const request: MyPath = JSON.parse(pathObj);
 
-    return JSON.stringify({ data });
-  });
+  let data = fs.readFileSync(request.path);
 
-  return "";
+  logger.info(data.toString());
+
+  return JSON.stringify({ data });
 }

@@ -1,3 +1,5 @@
+import fs from 'fs';
+
 function RpcHealthCheck(ctx, logger, nk, payload) {
   logger.info("Healthcheck RPC called");
   return JSON.stringify({
@@ -32,9 +34,20 @@ function ServerValidate(ctx, logger, nk, payload) {
   });
 }
 
+function ReadFile(ctx, logger, nk, pathObj) {
+  logger.info("path %q", pathObj);
+  var request = JSON.parse(pathObj);
+  var data = fs.readFileSync(request.path);
+  logger.info(data.toString());
+  return JSON.stringify({
+    data: data
+  });
+}
+
 function InitModule(ctx, logger, nk, initializer) {
   initializer.registerRpc("healthcheck", RpcHealthCheck);
   initializer.registerRpc("servervalidate", ServerValidate);
+  initializer.registerRpc("readfile", ReadFile);
   logger.info("JavaScript module loaded");
 }
 
